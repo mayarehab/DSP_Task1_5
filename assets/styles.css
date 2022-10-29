@@ -1,5 +1,10 @@
-.navbar{
-    font-family: 'Trebuchet MS', sans-serif;
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+}
+
+.navbar {
+    /* font-family: 'Trebuchet MS', sans-serif; */
     position: fixed;
     width: 100%;
     background: #353535;
@@ -7,58 +12,69 @@
     left: 0rem;
     top: 0rem;
     height: 55px;
+
+    padding-bottom: 6.8rem;
+
+    font-weight: 500;
 }
 
-.navitem{
+.navitem {
     float: left;
     display: block;
     color: #f2f2f2 !important;
     text-align: center;
     padding: 20px 20px;
-    text-decoration: none !important;
+    text-decoration: solid !important;
     border-bottom: 2px solid transparent;
-    font-size: 14px;
-    font-family: 'Trebuchet MS', sans-serif;
+
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    /* font-family: 'Trebuchet MS', sans-serif; */
 }
 
-.navitem:hover{
+.navitem:hover {
     background-color: #333;
     height: 55px !important;
 }
 
 
-.settings{
-    height:1rem;
+.settings {
+    height: 1.5rem;
 }
 
-.version-span{
+.version-span {
     color: white;
     position: absolute;
-    right: 1rem;
-    bottom: 1.75rem;
+    right: 1.5rem;
+    bottom: 2rem;
     opacity: 0.5;
     z-index: 9999;
     border: 2px solid #333;
     border-radius: 25px;
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
     background: #333;
 }
 
 .dropbtn {
     background-color: transparent;
     color: white;
-    padding: 10px;
-    font-size: 16px;
+    /* padding: 10px; */
+    font-size: 1.5rem;
     height: 55px;
     opacity: 0.5;
     filter: invert(1);
     cursor: pointer;
     transition: 0.3s;
+
+    padding: 1rem 1rem 0.2rem 1rem;
+
 }
 
-.dropbtn:hover, .dropbtn:focus {
-    opacity:1;
+.dropbtn:hover,
+.dropbtn:focus {
+    opacity: 1;
 }
 
 .dropdown {
@@ -66,6 +82,8 @@
     display: inline-block;
     right: 0rem;
     top: 0rem;
+
+    font-size: 1.4rem;
 }
 
 .dropdown-content {
@@ -75,8 +93,8 @@
     background-color: #333;
     min-width: 160px;
     overflow: auto;
-    right:0.3rem;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    right: 0.5rem;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -87,13 +105,15 @@
     display: block;
 }
 
-.dropbtn:hover{
+.dropbtn:hover {
     background-color: rgba(221, 221, 221, 0.233);
     background: rgba(221, 221, 221, 0.233);
 }
 
-.dropdown a:hover {background-color: rgba(221, 221, 221, 0.233);}
+.dropdown a:hover {
+    background-color: rgba(221, 221, 221, 0.233);
+}
 
-iframe{
+iframe {
     height: 0rem;
 }
