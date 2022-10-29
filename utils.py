@@ -18,8 +18,10 @@ def get_current_route():
 
 
 def navbar_component():
-    with open("assets/images/settings.png", "rb") as image_file:
+    with open("assets/images/gear-icon.svg", "rb") as image_file:
         image_as_base64 = base64.b64encode(image_file.read())
+
+    image_file.close()
 
     navbar_items = ''
     for key, value in NAVBAR_PATHS.items():
@@ -36,7 +38,7 @@ def navbar_component():
                 {navbar_items}
                 </ul>
                 <div class="dropdown" id="settingsDropDown">
-                    <img class="dropbtn" src="data:image/png;base64, {image_as_base64.decode("utf-8")}"/>
+                    <img class="dropbtn" src="data:image/svg+xml;base64, {image_as_base64.decode("utf-8")}"/>
                     <div id="myDropdown" class="dropdown-content">
                         {settings_items}
                     </div>
