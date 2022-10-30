@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import pandas as ps
 import numpy as np
 from numpy import tile, dot, newaxis, sinc
 import plotly.graph_objects as go
@@ -88,3 +89,37 @@ def load_view():
             Plotting(time, amp, fs)
             sampled_Time, sampled_Amp = sample(time, amp, fs)
             PlotRecons(time, sinc_interp(sampled_Amp, sampled_Time, time))
+    else:
+        default_file = ps.read_csv('samples/sine_wave.csv')
+        fs = st.slider('Sample Frequency', 1, 200, 25)
+        noise = st.checkbox('Add noise')
+
+        df = default_file
+        st.session_state['df'] = df
+        df = st.session_state['df'] 
+        time = df.iloc[:, 0].to_numpy()
+        amp = df.iloc[:, 1].to_numpy()
+        if (noise):  
+            SNR = st.slider('SNR (dBw)', 0.01, 100.0,
+                                20.0, step=0.5)
+                
+            # Calculate signal power and convert to dB 
+            x_watts = amp ** 2
+            sig_avg_watts = np.mean(x_watts)
+            sig_avg_db = 10 * np.log10(sig_avg_watts)
+            # Calculate noise according to [2] then convert to watts
+            noise_avg_db = sig_avg_db - SNR
+            noise_avg_watts = 10 ** (noise_avg_db / 10)
+            # Generate an sample of white noise
+            mean_noise = 0
+            noise_volts = np.random.normal(mean_noise, np.sqrt(noise_avg_watts), len(x_watts))
+            # Noise up the original signal
+            noisedSignal = amp + noise_volts
+            Plotting(time,noisedSignal,fs)
+            sampled_Time, sampled_Amp = sample( time,noisedSignal, fs)
+            PlotRecons (time,sinc_interp(sampled_Amp, sampled_Time, time))
+
+        else:
+            Plotting(time,amp,fs)
+            sampled_Time, sampled_Amp = sample( time,amp, fs)
+            PlotRecons (time,sinc_interp(sampled_Amp, sampled_Time, time))
