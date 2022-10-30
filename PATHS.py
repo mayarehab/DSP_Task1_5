@@ -1,6 +1,6 @@
 NAVBAR_PATHS = {
     'HOME':'home',
-    'GENERATE SIGNAL': 'generate',
+    'GENERATE': 'generate',
     'ANALYSIS': 'analysis'
 }
 
