@@ -1,6 +1,6 @@
 :root {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 10px;
+    font-size: 20px;
 }
 
 .navbar {
@@ -13,9 +13,10 @@
     top: 0rem;
     height: 55px;
 
-    padding-bottom: 6.8rem;
+    padding-bottom: 4.3rem;
 
     font-weight: 500;
+    /* font-size: small; */
 }
 
 .navitem {
@@ -27,7 +28,7 @@
     text-decoration: solid !important;
     border-bottom: 2px solid transparent;
 
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 600;
 
     /* font-family: 'Trebuchet MS', sans-serif; */
