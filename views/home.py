@@ -2,11 +2,14 @@ import streamlit as st
 import pandas as pd
 import pandas as ps
 import numpy as np
+from scipy.signal import find_peaks
+import scipy
 from numpy import tile, dot, newaxis, sinc
 import plotly.graph_objects as go
 
 
 def load_view():
+   
 
     def sample(time, amplitude, fs):
         if len(time) == len(amplitude):

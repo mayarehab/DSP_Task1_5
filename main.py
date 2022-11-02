@@ -1,6 +1,6 @@
 import streamlit as st
 import utils as utl
-from views import home, generate, analysis, options, configuration
+from views import home, generate, options, configuration
 
 st.set_page_config(layout="wide", page_title='Navbar sample')
 st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -14,12 +14,6 @@ def navigation():
         home.load_view()
     elif route == "generate":
         generate.load_view()
-    elif route == "analysis":
-        analysis.load_view()
-    elif route == "options":
-        options.load_view()
-    elif route == "configuration":
-        configuration.load_view()
-
+   
 
 navigation()

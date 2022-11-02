@@ -37,12 +37,7 @@ def navbar_component():
                 <ul class="navlist">
                 {navbar_items}
                 </ul>
-                <div class="dropdown" id="settingsDropDown">
-                    <img class="dropbtn" src="data:image/svg+xml;base64, {image_as_base64.decode("utf-8")}"/>
-                    <div id="myDropdown" class="dropdown-content">
-                        {settings_items}
-                    </div>
-                </div>
+                
             </nav>
             '''
     st.markdown(component, unsafe_allow_html=True)
