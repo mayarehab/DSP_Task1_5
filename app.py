@@ -23,6 +23,7 @@ if "frequencies" not in st.session_state:
 
 if "amplitudes" not in st.session_state:
     st.session_state["amplitudes"] = []
+
 if "time" not in st.session_state:
     st.session_state["time"] = np.arange(0, 10, 0.0001)
 
@@ -141,6 +142,8 @@ with col2:
         if len(st.session_state["amplitudes"]) != 0:
             signal_deleter(selected_signal)
 
+    # download generated signal
+
     signal_csv = pd.DataFrame({"Time": st.session_state["time"].tolist(
     ), "Value": st.session_state["signal"].tolist()}).to_csv(index=False).encode('utf-8')
 
@@ -192,7 +195,7 @@ if uploaded_file is not None:
 
     else:
         with col1:
-            add_signal_plotting()
+            # add_signal_plotting()
             sampled_Time, sampled_Amp = sample(time, amp, fs)
             Plotting(time, amp, fs, time, sinc_interp(
                 sampled_Amp, sampled_Time, time))
@@ -227,7 +230,7 @@ else:
         noisedSignal = amp + noise_volts
         sampled_Time, sampled_Amp = sample(time, noisedSignal, fs)
         with col1:
-            add_signal_plotting()
+            # add_signal_plotting()
             Plotting(time, noisedSignal, fs, time, sinc_interp(
                 sampled_Amp, sampled_Time, time))
 
