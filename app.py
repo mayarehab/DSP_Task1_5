@@ -231,6 +231,8 @@ else:
         sampled_Time, sampled_Amp = sample(time, noisedSignal, fs)
         with col1:
             # add_signal_plotting()
+            sampled_Time, sampled_Amp = sample(time, amp, fs)
+
             Plotting(time, noisedSignal, fs, time, sinc_interp(
                 sampled_Amp, sampled_Time, time))
 
